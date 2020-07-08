@@ -1,0 +1,44 @@
+body {
+    overflow:scroll !important;
+}
+.fx-user {
+    background: linear-gradient(to right, rgb(225, 225, 225), white);
+    margin-bottom: 10px;
+    padding-top: 10px;
+    height: 168px;
+    padding-left: 10px;
+}
+
+.fx-user .fx-user-image {
+        float: left;
+        padding-right: 10px;
+        position: relative;
+        z-index: 1;
+    }
+
+.fx-user .fx-user-image img {
+            cursor: pointer;
+    }
+.fx-user .fx-user-info .fx-user-name {
+        font-size: 11pt;
+    }
+    @media (min-width: 1200px){
+        .fx-user {
+            width: 50%;
+            float: left;
+        }
+    }
+.portlet.light.bordered {
+    border: 1px solid #e1e1e1 !important;
+
+}
+.portlet.light {
+    padding: 12px 20px 15px;
+    background-color: #fff;
+}
+.portlet {
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+    

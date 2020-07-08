@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quan ly sinh vien</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Boostrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <!-- AngularJs -->
+    <script src="http://code.angularjs.org/1.6.9/angular.js"></script>
+    <!-- UI-Router -->
+    <script src="//unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="../js/app.js"></script>
+    <link rel="stylesheet" href="../styles/custom.css">
+   
+</head>
+
+<body>
+    <div ng-app="myApp" ng-controller="controller">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption caption-md">
+                            <span class="caption-subject  uppercase f-collapse" style="color: #000">Tìm kiếm</span>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-horizontal">
+                                    <div class="form-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <div class="form-group">
+                                                    <label class="col-sm-4 control-label" style="padding-top: 3px;">Từ
+                                                        khóa:</label>
+                                                    <div class="col-sm-8" style="display: -webkit-box;">
+                                                        <input class="form-control input-sm" type="text"
+                                                            ng-model="search" />
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                            </div>
+                                            <div class="col-sm-10 col-sm-offset-2">
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-default btn-sm"
+                                                        ng-click="searchUser()"><i class="fa fa-search right-5"></i>
+                                                        Tìm kiếm</button>
+                                                    <button type="button" class="btn btn-default btn-sm"
+                                                        ng-click="refreshSearch()"><i class="fa fa-refresh right-5"></i>
+                                                    </button>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                    <div class="caption caption-md">
+                        <span class="caption-subject uppercase f-collapse" style="color: #000">
+                            Kết quả tìm kiếm  <span class="caption-helper">  {{names.length}} kết quả</span>
+                        </span>
+                    </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="row">
+                            <div id="elist-container" class="col-md-12">
+                                <fx-user f-container="elist-container" ng-repeat="user in names">
+                                    <div class="fx-user" >
+                                        <div class="fx-user-image">
+                                            <img height="120" width="120" ng-src="{{user.Photo.Description}}" />
+                                        </div>
+                                        <div class="fx-user-info">
+                                            <div class="fx-user-name">
+                                                <label>Họ và tên</label>
+                                                <a ui-sref="editUser({userID: user.ID})"
+                                                    style="color: #00467f !important;">{{user.Name}}</a>
+                                            </div>
+                                            <div class="fx-user-name">
+                                                <label>MSSV</label>
+                                                <a ui-sref="editUser({userID: user.ID})"
+                                                    style="color: #00467f !important;">{{user.MSSV}}</a>
+                                            </div>
+                                            <div class="fx-user-name">
+                                                <label>Tuổi</label>
+                                                <a ui-sref="editUser({userID: user.ID})"
+                                                    style="color: #00467f !important;">{{user.Age}}</a>
+                                            </div>
+                                            <div class="fx-user-name">
+                                                <label>Địa chỉ</label>
+                                                <a ui-sref="editUser({userID: user.ID})"
+                                                    style="color: #00467f !important;">{{user.Address}}</a>
+                                            </div>
+                                            <div class="fx-user-name">
+                                                <label>Lớp</label>
+                                                <a ui-sref="editUser({userID: user.ID})"
+                                                    style="color: #00467f !important;">{{user.Class.Title}}</a>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </fx-user>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <ul class="pagination">
+                                    <li ng-class="preview"><a class="page-link" ng-click="previous()"><span
+                                                class="glyphicon glyphicon-chevron-left"></span>Trang trước</a></li>
+                                    <li ng-class="nextview"><a class="page-link" ng-click="next()">Trang sau<span
+                                                class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

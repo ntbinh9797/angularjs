@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Quan ly sinh vien</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Boostrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- AngularJs -->
+  <script src="http://code.angularjs.org/1.6.9/angular.js"></script>
+  <!-- UI-Router -->
+  <script src="//unpkg.com/@uirouter/angularjs@1.0.7/release/angular-ui-router.min.js"></script>
+  <script src="../js/app.js"></script>
+</head>
+
+<body ng-app="myApp">
+<div ng-controller="AddCtrl">
+<div class="container">
+
+<form class="well form-horizontal">
+<fieldset>
+
+<!-- Form Name -->
+<legend><center><h2><b>Thêm Sinh Viên</b></h2></center></legend><br>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label">Họ và tên</label>  
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input class="form-control"  type="text" ng-model="user.Name">
+    </div>
+  </div>
+</div>
+
+<!-- Text input-->
+
+<div class="form-group">
+  <label class="col-md-4 control-label" >MSSV</label> 
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+  <input  class="form-control"  type="text" ng-model="user.MSSV">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+
+<div class="form-group">
+    <label class="col-md-4 control-label" >Tuổi</label> 
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+    <input  class="form-control"  type="number" ng-model="user.Age">
+      </div>
+    </div>
+  </div>
+
+<!-- Text input-->
+       <div class="form-group">
+  <label class="col-md-4 control-label">Địa chỉ</label>  
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+  <input  class="form-control"  type="text" ng-model="user.Address">
+    </div>
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+    <label class="col-md-4 control-label">Lớp</label>  
+      <div class="col-md-4 inputGroupContainer">
+      <div class="input-group">
+          <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+          <select ng-model="user.Class.Title">
+            <option value="10A1">10A1</option>
+            <option value="10A2">10A2</option>
+            <option value="10A3">10A3</option>
+            <option value="11A1">11A1</option>
+            <option value="11A2">11A2</option>
+            <option value="11A3">11A3</option>
+            <option value="12A1">12A1</option>
+            <option value="12A2">12A2</option>
+          </select>
+      </div>
+    </div>
+  </div>
+
+<!-- Button -->
+<center>
+  <button type="submit" class="btn btn-primary" ng-click="addUser()"><i class="fa fa-plus"></i>Thêm</button>
+
+</center>
+</fieldset>
+</form>
+</div>
+</div><!-- /.container -->
+</body>
+</html>
